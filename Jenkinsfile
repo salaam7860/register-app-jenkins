@@ -35,6 +35,7 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 script {
+                    /* groovylint-disable-next-line DuplicateStringLiteral */
                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
                 }
             }
