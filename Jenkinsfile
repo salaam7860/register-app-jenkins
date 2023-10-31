@@ -1,8 +1,10 @@
+//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
+// Git Password ^^^^^^
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
     tools {
-        jdk 'java11'
+        jdk 'Java17'
         maven 'Maven3'
     }
     stages {
@@ -14,7 +16,7 @@ pipeline {
         stage('Checkout From SCM') {
             steps {
                 /* groovylint-disable-next-line LineLength */
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/salaam7860/register-app-jenkins.git'
+                git branch: 'main', credentialsId: 'Git_ID', url: 'https://github.com/salaam7860/register-app-jenkins.git'
          }
         }
         stage('Build Application') {
