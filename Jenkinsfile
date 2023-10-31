@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     /* groovylint-disable-next-line NestedBlockDepth, NglParseError */
-                    withSonarQubeEnv(credentialsId: 'sonar_token') {
+                    withSonarQubeEnv(credentialsId: 'sonar') {
                         sh 'mvn sonar:sonar'
                     }
                 }
