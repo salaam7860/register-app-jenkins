@@ -1,5 +1,4 @@
-// Git Password ^^^^^^
-/* groovylint-disable-next-line CompileStatic */
+// groovylint-disable-next-line CompileStatic
 pipeline {
     agent any
     tools {
@@ -14,9 +13,9 @@ pipeline {
         }
         stage('Checkout From SCM') {
             steps {
-                /* groovylint-disable-next-line LineLength */
+                // groovylint-disable-next-line LineLength
                 git branch: 'main', credentialsId: 'Git_ID', url: 'https://github.com/salaam7860/register-app-jenkins.git'
-         }
+            }
         }
         stage('Build Application') {
             steps {
@@ -26,10 +25,11 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    /* groovylint-disable-next-line NglParseError */
+                    /* groovylint-disable-next-line NestedBlockDepth, NglParseError */
                     withSonarQubeEnv(credentialsId: 'sonar_token') {
                         sh 'mvn sonar:sonar'
                     }
+                }
             }
         }
     }
