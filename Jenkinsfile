@@ -1,4 +1,3 @@
-//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
 // Git Password ^^^^^^
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
