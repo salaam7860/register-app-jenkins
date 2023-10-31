@@ -23,5 +23,14 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    /* groovylint-disable-next-line NglParseError */
+                    withSonarQubeEnv(credentialsId: 'sonar_token') {
+                        sh 'mvn sonar:sonar'
+                    }
+            }
+        }
     }
 }
